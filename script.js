@@ -44,3 +44,29 @@ function isPalindrome(line) {
   }
 return false;
 }
+
+
+
+/** an algo for rock, paper, scissors
+ PseudoCode:
+ 
+ 
+ */
+
+const rps = (p1, p2) => {
+  winner_list = ["Player 1", "Player 2"]
+  play_list = [p1, p2]
+  
+  if (play_list.includes("scissors")&&play_list.includes("paper")){
+      return `${winner_list[play_list.indexOf("scissors")]} won!`
+      }
+  else if (play_list.includes("scissors")&& play_list.includes("rock")){
+      return `${winner_list[play_list.indexOf("rock")]} won!`
+      }
+  else if (play_list.includes("paper")&& play_list.includes("rock")){
+      return `${winner_list[play_list.indexOf("paper")]} won!`    
+      }
+  else if (p1==p2){
+      return "Draw!"
+  }
+};
