@@ -49,13 +49,23 @@ return false;
 
 /** an algo for rock, paper, scissors
  PseudoCode:
+
+function rockPaperScisors(p1,p2) {
+  construct winn_list = [nameOfPlayers]
+  construct play_list = [p1,p2]
+
+  if for all cases (x,y are in play_list) {
+    return full sentence "$'winn_list[play_list.indexOf(winner')"
+
+  }
+}
  
  
  */
 
 const rps = (p1, p2) => {
-  winner_list = ["Player 1", "Player 2"]
-  play_list = [p1, p2]
+  let winner_list = ["Player 1", "Player 2"]
+  let play_list = [p1, p2]
   
   if (play_list.includes("scissors")&&play_list.includes("paper")){
       return `${winner_list[play_list.indexOf("scissors")]} won!`

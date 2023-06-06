@@ -117,3 +117,104 @@ def likes(names):
         3: '{}, {} and {} like this', 
         4: '{}, {} and {others} others like this'
     }[min(4, n)].format(*names[:3], others=n-2)
+
+"""
+create a calculater function using leteral numbers and callback functions. This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+seven(times(five())) # must return 35
+
+
+Requirements:
+
+    There must be a function for each number from 0 ("zero") to 9 ("nine")
+    There must be a function for each of the following mathematical operations: plus, minus, times, divided_by
+    Each calculation consist of exactly one operation and two numbers
+    The most outer function represents the left operand, the most inner function represents the right operand
+    Division should be integer division. For example, this should return 2, not 2.666666...:
+
+    
+    What I have learned: 
+    1.
+    the concept of closure of functions!!! Basically: if I return an inner function I can asignt
+    the outer function to a variable, when I then call the variable I can give parameters that will be used within the inner function.
+    The variable will work as a functioncall for the inner function. This is because the scope and memory of the different functions in Python.
+    2. 
+    the concept of lambda. Lambda is a throwaway function that follows the syntax lambda x,y: x+y first part are the arguments, 
+    second is what it returns...
+"""
+
+
+
+def zero(second_function = None):
+    if second_function:
+        return second_function(0)
+    return 0
+
+def one(second_function=None):
+    if second_function:
+        return second_function(1)
+    return 1
+
+def two(second_function=None):
+    if second_function:
+        return second_function(2)
+    return 2
+    
+def three(second_function=None):
+    if second_function:
+        return second_function(3)
+    return 3   
+
+def four(second_function=None):
+    if second_function:
+        return second_function(4)
+    return 4   
+
+def five(second_function=None):
+    if second_function:
+        return second_function(5)
+    return 5      
+
+def six(second_function=None):
+    if second_function:
+        return second_function(6)
+    return 6  
+
+def seven(second_function=None):
+    if second_function:
+        return second_function(7)
+    return 7
+
+def eight(second_function=None):
+    if second_function:
+        return second_function(8)
+    return 8
+
+def nine(second_function=None):
+    if second_function:
+        return second_function(9)
+    return 9
+
+
+
+def plus(third_function):
+    def inner_function(left_number):
+        return left_number + third_function 
+    return inner_function
+
+def minus(third_function):
+    def inner_function(left_number):
+        return left_number - third_function 
+    return inner_function
+
+def times(third_function):
+    def inner_function(left_number):
+        return left_number * third_function 
+    return inner_function
+
+def divided_by(third_function):
+    def inner_function(left_number):
+        return left_number // third_function 
+    return inner_function
+
+
