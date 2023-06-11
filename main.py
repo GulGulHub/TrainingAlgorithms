@@ -218,3 +218,8 @@ def divided_by(third_function):
     return inner_function
 
 
+#sort an array by length of string
+
+def sort_by_length(arr):
+    arr.sort(key=len)
+    return arr
